@@ -1,0 +1,29 @@
+.root {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.li {
+  &:not(:last-child) {
+    margin: 0px 15px 0px 0px;
+  }
+}
+
+.pageBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  overflow: hidden;
+  width: 35px;
+  height: 35px;
+  font-size: 20px;
+  transition: 0.2s ease-in;
+  cursor: pointer;
+}
+
+.current {
+  background-color: #fe5f1e;
+  color: #ffffff;
+}

@@ -1,0 +1,84 @@
+@import '../variables';
+
+.sort {
+  position: relative;
+  display: flex;
+  align-items: center;
+  @media (max-width: 770px) {
+    margin: 0 auto;
+  }
+  &__label {
+    display: flex;
+    align-items: center;
+    @media (max-width: 1140px) {
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    svg {
+      margin-right: 8px;
+      transform: rotate(180deg);
+      transition: 0.4s ease-in;
+      &._rotate {
+        transform: rotate(0);
+      }
+    }
+
+    b {
+      white-space: nowrap;
+      margin-right: 8px;
+      @media (max-width: 420px) {
+        white-space: normal;
+        margin-right: 5px;
+      }
+    }
+
+    span {
+      color: $orange;
+      border-bottom: 1px dashed $orange;
+      cursor: pointer;
+      white-space: nowrap;
+    }
+  }
+
+  &__popup {
+    pointer-events: none;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-50%);
+    position: absolute;
+    top: 100%;
+    right: 0;
+    margin-top: 15px;
+    background: #ffffff;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.09);
+    border-radius: 10px;
+    overflow: hidden;
+    padding: 10px 0;
+    width: 215px;
+    transition: 0.4s ease-out;
+    ul {
+      overflow: hidden;
+      li {
+        padding: 12px 20px;
+        cursor: pointer;
+
+        &.active,
+        &:hover {
+          background: rgba(254, 95, 30, 0.05);
+        }
+
+        &.active {
+          font-weight: bold;
+          color: $orange;
+        }
+      }
+    }
+    &.active {
+      pointer-events: auto;
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+  }
+}

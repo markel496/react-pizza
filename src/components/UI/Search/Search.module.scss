@@ -1,0 +1,74 @@
+.root {
+  flex: 1 1 auto;
+  display: flex;
+  justify-content: center;
+  //Убираю крестик
+  input[type='text']::-ms-clear {
+    display: none;
+    width: 0;
+    height: 0;
+  }
+  input[type='text']::-ms-reveal {
+    display: none;
+    width: 0;
+    height: 0;
+  }
+  input[type='search']::-webkit-search-decoration,
+  input[type='search']::-webkit-search-cancel-button,
+  input[type='search']::-webkit-search-results-button,
+  input[type='search']::-webkit-search-results-decoration {
+    display: none;
+  }
+}
+
+.container {
+  position: relative;
+  max-width: 400px;
+  min-width: 270px;
+  width: 100%;
+  margin: 0 40px;
+  @media (max-width: 940px) {
+    margin: 0;
+    min-width: auto;
+  }
+}
+
+.searchIcon {
+  width: 25px;
+  height: 25px;
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  transform: translateY(-50%);
+  opacity: 0.5;
+}
+
+.closeIcon {
+  width: 25px;
+  height: 25px;
+  position: absolute;
+  top: 50%;
+  right: 5px;
+  transform: translateY(-50%);
+  opacity: 0.5;
+  cursor: pointer;
+  transition: 0.2s ease-in;
+  @media (min-width: 992px) {
+    // hhv snippet
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+}
+
+.input {
+  width: 100%;
+  padding: 10px 20px 10px 40px;
+  border-radius: 10px;
+  border: 2px solid rgba(#000, 0.3);
+  font-size: 16px;
+  transition: 0.2s ease-in;
+  &:focus {
+    border: 2px solid rgba(#000, 0.6);
+  }
+}
