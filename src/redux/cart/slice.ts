@@ -11,8 +11,8 @@ const initialState: CartSliceState = {
   totalItems: getAddedPizzasFromLS() || [],
   //для кнопки(сколько пицц добавил в корзину)
   countItems: getCountItemsFromLS() || [],
-  totalPrice: totalPrice(getAddedPizzasFromLS()) || 0,
-  totalCount: totalCount(getCountItemsFromLS()) || 0,
+  totalPrice: totalPrice(getAddedPizzasFromLS()),
+  totalCount: totalCount(getCountItemsFromLS()),
 }
 
 const cartSlice = createSlice({
