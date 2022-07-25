@@ -126,7 +126,7 @@ const FullPizza: React.FC = () => {
                 />
               </svg>
               <span>Добавить</span>
-              {count && count > 0 && <i>{count}</i>}
+              {count ? count > 0 && <i>{count}</i> : ''}
             </button>
           </div>
         </div>
